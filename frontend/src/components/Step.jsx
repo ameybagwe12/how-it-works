@@ -4,8 +4,10 @@ import "../styles/Step.css";
 export default function Step() {
   return (
     <>
-      <div>
-        <h1>hello</h1>
+      <div className="mainDiv">
+        <div className="flowDiv">
+          <ion-icon name="add-circle-sharp"></ion-icon>
+        </div>
       </div>
     </>
   );

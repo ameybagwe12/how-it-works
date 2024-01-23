@@ -5,20 +5,29 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 export default function Home() {
-  const [addStepNumber, setAddStepNumber] = useState("");
+  const [addStep, setAddStep] = useState({
+    stepNum: "",
+    stepText: "",
+  });
   const [deleteStepNumber, setDeleteStepNumber] = useState("");
 
   const handleAddStepNumberChange = (event) => {
-    setAddStepNumber(event.target.value);
-    console.log(addStepNumber);
+    setAddStep({
+      ...addStep,
+      stepNum: event.target.value,
+    });
+  };
+
+  const handleAddStepTextChange = (event) => {
+    setAddStep({
+      ...addStep,
+      stepText: event.target.value,
+    });
   };
 
   const handleDeleteStepNumberChange = (event) => {
     setDeleteStepNumber(event.target.value);
-    console.log(deleteStepNumber);
   };
-
-  // You can use the addStepNumber and deleteStepNumber variables to pass values to your API
 
   return (
     <>
@@ -27,7 +36,7 @@ export default function Home() {
       </div>
       <div className="btnModify">
         <div className="innerBtn">
-          <div className="stepDiv" onClick={() => console.log(addStepNumber)}>
+          <div className="stepDiv" onClick={() => console.log(addStep)}>
             <ion-icon name="add-circle-sharp"></ion-icon>
           </div>
           <Box
@@ -39,14 +48,22 @@ export default function Home() {
             autoComplete="off"
           >
             <TextField
+              required
               id="add-step-number"
               label="Add Step"
               type="number"
-              value={addStepNumber}
+              value={addStep.stepNum}
               onChange={handleAddStepNumberChange}
               InputLabelProps={{
                 shrink: true,
               }}
+            />
+            <TextField
+              required
+              value={addStep.stepText}
+              onChange={handleAddStepTextChange}
+              id="add-step-text"
+              label="Add Description"
             />
           </Box>
         </div>
@@ -67,6 +84,7 @@ export default function Home() {
             autoComplete="off"
           >
             <TextField
+              required
               id="delete-step-number"
               label="Delete Step"
               type="number"

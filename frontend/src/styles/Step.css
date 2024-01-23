@@ -9,6 +9,23 @@
   justify-content: center;
 }
 
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.flowDiv {
+  background-color: #714fff;
+  border-radius: 50%;
+  width: 100px; /* replace with your desired width */
+  height: 100px; /* replace with your desired height */
+  margin: 10; /* This centers the element horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 ion-icon {
   color: white;
 }
