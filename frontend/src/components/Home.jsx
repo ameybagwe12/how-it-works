@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/Home.css";
 import Step from "./Step";
 import Box from "@mui/material/Box";
@@ -9,7 +10,9 @@ export default function Home() {
     stepNum: "",
     stepText: "",
   });
+
   const [deleteStepNumber, setDeleteStepNumber] = useState("");
+  const [steps, setSteps] = useState([]);
 
   const handleAddStepNumberChange = (event) => {
     setAddStep({
@@ -29,6 +32,48 @@ export default function Home() {
     setDeleteStepNumber(event.target.value);
   };
 
+  const handleAddStepClick = async () => {
+    try {
+      // Send data to the backend using axios
+      await axios.post("http://localhost:5000/add-step", addStep);
+
+      // Fetch updated steps after adding a new step
+      const response = await axios.get("http://localhost:5000/get-steps");
+      setSteps(response.data);
+    } catch (error) {
+      console.error("Error adding step:", error);
+    }
+  };
+
+  const handleDeleteStepClick = async () => {
+    try {
+      // Send data to the backend using axios
+      await axios.delete(
+        `http://localhost:5000/delete-step/${deleteStepNumber}`
+      );
+
+      // Fetch updated steps after deleting a step
+      const response = await axios.get("http://localhost:5000/get-steps");
+      setSteps(response.data);
+    } catch (error) {
+      console.error("Error deleting step:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch initial steps when the component mounts
+    const fetchSteps = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/get-steps");
+        setSteps(response.data);
+      } catch (error) {
+        console.error("Error fetching steps:", error);
+      }
+    };
+
+    fetchSteps();
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
   return (
     <>
       <div className="titleDiv">
@@ -36,7 +81,7 @@ export default function Home() {
       </div>
       <div className="btnModify">
         <div className="innerBtn">
-          <div className="stepDiv" onClick={() => console.log(addStep)}>
+          <div className="stepDiv" onClick={handleAddStepClick}>
             <ion-icon name="add-circle-sharp"></ion-icon>
           </div>
           <Box
@@ -69,10 +114,7 @@ export default function Home() {
         </div>
 
         <div className="innerBtn">
-          <div
-            className="stepDiv"
-            onClick={() => console.log(deleteStepNumber)}
-          >
+          <div className="stepDiv" onClick={handleDeleteStepClick}>
             <ion-icon name="trash-sharp"></ion-icon>
           </div>
           <Box
@@ -98,7 +140,10 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <Step />
+        {/* Render the list of steps */}
+        {steps.map((step) => (
+          <Step key={step._id} step={step} />
+        ))}
       </div>
     </>
   );
