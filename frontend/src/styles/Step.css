@@ -1,0 +1,14 @@
+.iconDiv {
+  background-color: #714fff;
+  border-radius: 50%;
+  width: 50px; /* replace with your desired width */
+  height: 50px; /* replace with your desired height */
+  margin: 0 auto; /* This centers the element horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-icon {
+  color: white;
+}
