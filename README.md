@@ -1,3 +1,5 @@
+![Home Page](./frontend/src/screenshot1.png)
+
 # Installation
 
 On terminal run git clone [https://github.com/ameybagwe12/how-it-works.git](https://github.com/ameybagwe12/how-it-works.git)
