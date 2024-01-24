@@ -36,19 +36,19 @@ Host the localhost server on port 5000
 
 ## 1. Technology Stack:
 
-Frontend - ReactJs
-Backend - NodeJs, ExpressJs
-Database - MongoDB
-Libraries -
-a-[MaterialUi(UI Development)](https://mui.com/material-ui/getting-started/) ,
-b-[Animista(Transitions)](https://animista.net/),
-c-[LottieFiles(Animations)](https://lottiefiles.com/),
+Frontend - ReactJs\
+Backend - NodeJs, ExpressJs\
+Database - MongoDB\
+Libraries -\
+a-[MaterialUi(UI Development)](https://mui.com/material-ui/getting-started/) ,\
+b-[Animista(Transitions)](https://animista.net/),\
+c-[LottieFiles(Animations)](https://lottiefiles.com/),\
 d-Axios(API cals)
 
 ## 2. Flow of Project
 
-Add Step -> Input the data and new step will be created serially in sorting format
-TextField-1 (Step Number)
+Add Step -> Input the data and new step will be created serially in sorting format\
+TextField-1 (Step Number)\
 TextField-2 (Step Text)
 
 Delete Step ->
