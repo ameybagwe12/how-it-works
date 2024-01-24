@@ -8,7 +8,7 @@ export default function Step({ step }) {
   console.log("====================================");
   return (
     <>
-      <div className="mainDiv">
+      <div className="mainDiv scale-in-center">
         <div className="flowDiv">
           <div>
             <Player
