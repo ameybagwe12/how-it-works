@@ -26,7 +26,9 @@ export default function Step({ step }) {
             <h4 style={{ textAlign: "center", margin: 0, color: "white" }}>
               Step {step.stepNumber}:
             </h4>
-            <p style={{ margin: 0, color: "white" }}>{step.stepsText}</p>
+            <p style={{ margin: 0, color: "white", fontWeight: "bold" }}>
+              {step.stepsText}
+            </p>
           </div>
         </div>
       </div>
