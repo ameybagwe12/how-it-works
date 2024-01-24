@@ -7,7 +7,7 @@ In root directory open 2 terminals one for frontend and for backend
 
 ## Frontend Directory
 
-Terminal(1) -> cd ./frontend from how-it-works
+Terminal(1) -> cd ./frontend from how-it-works.\
 From the frontend project directory, you can run:
 
 ### `npm install` - Step(1)
@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Backend Directory
 
-Terminal(2) -> cd ./backend from how-it-works
+Terminal(2) -> cd ./backend from how-it-works.\
 From the backend project directory, you can run:
 
 ### `npm install` - Step(1)
