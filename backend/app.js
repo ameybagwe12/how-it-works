@@ -26,6 +26,12 @@ app.post("/add-step", async (req, res) => {
   try {
     const { stepNum, stepText } = req.body;
 
+    // Check if the step number already exists
+    const existingStep = await Steps.findOne({ stepNumber: stepNum });
+    if (existingStep) {
+      return res.status(400).json({ message: "Step number already exists." });
+    }
+
     // Create a new step
     const newStep = new Steps({
       stepNumber: stepNum,

@@ -7,7 +7,7 @@
   justify-content: space-evenly;
 }
 
-.stepDiv {
+.btn {
   background-color: #714fff;
   border-radius: 50%;
   width: 50px; /* replace with your desired width */
@@ -25,4 +25,41 @@
 .title {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+}
+
+.rootStep {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* gap: 20px; Adjust the gap between steps as needed */
+}
+
+.stepGroup {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 600px) {
+  .btnModify {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .innerBtn {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Make icon buttons vertical */
+  }
+
+  .boxText,
+  .boxText2 {
+    margin: 10px; /* Add margin for better spacing */
+    text-align: center;
+  }
+
+  .rootStep {
+    grid-template-columns: 1fr; /* Display a single column in mobile view */
+  }
 }

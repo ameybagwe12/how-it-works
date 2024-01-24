@@ -1,9 +1,9 @@
 .iconDiv {
   background-color: #714fff;
   border-radius: 50%;
-  width: 50px; /* replace with your desired width */
-  height: 50px; /* replace with your desired height */
-  margin: 0 auto; /* This centers the element horizontally */
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,14 +18,24 @@
 .flowDiv {
   background-color: #714fff;
   border-radius: 50%;
-  width: 100px; /* replace with your desired width */
-  height: 100px; /* replace with your desired height */
-  margin: 10; /* This centers the element horizontally */
+  max-width: 150px; /* Set a maximum width to maintain circular shape */
+  width: 140px;
+  height: 140px;
+  padding: 10px;
+  margin: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  aspect-ratio: 1; /* Maintain a 1:1 aspect ratio for a perfect circle */
 }
 
 ion-icon {
   color: white;
+}
+
+.flowContent {
+  margin-bottom: 20px;
+  text-align: center;
+  word-wrap: break-word; /* Allow text to break into the next line */
 }
