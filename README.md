@@ -1,4 +1,5 @@
 ![Home Page](./frontend/src/screenshot1.png)
+![Database(MongoCompass)](./frontend/src/screenshot2.png)
 
 # Installation
 
